@@ -1,0 +1,68 @@
+1.
+
+def _sum(arr): 
+      
+    # initialize a variable
+    # to store the sum
+    # while iterating through
+    # the array later
+    sum=0
+      
+    # iterate through the array
+    # and add each element to the sum variable
+    # one at a time
+    for i in arr:
+        sum = sum + i
+          
+    return(sum) 
+  
+
+2.
+
+def largest(arr,n):
+  
+    # Initialize maximum element
+    max = arr[0]
+  
+    # Traverse array elements from second
+    # and compare every element with 
+    # current max
+    for i in range(1, n):
+        if arr[i] > max:
+            max = arr[i]
+    return max
+  
+
+3.
+
+def rotateArray(arr, n, d):
+    temp = []
+    i = 0
+    while (i < d):
+        temp.append(arr[i])
+        i = i + 1
+    i = 0
+    while (d < n):
+        arr[i] = arr[d]
+        i = i + 1
+        d = d + 1
+    arr[:] = arr[: i] + temp
+    return arr
+
+4.
+
+def splitArr(arr, n, k): 
+    for i in range(0, k): 
+        x = arr[0]
+        for j in range(0, n-1):
+            arr[j] = arr[j + 1]
+          
+        arr[n-1] = x
+          
+
+5.
+
+def isMonotonic(A):
+  
+    return (all(A[i] <= A[i + 1] for i in range(len(A) - 1)) or
+            all(A[i] >= A[i + 1] for i in range(len(A) - 1)))
